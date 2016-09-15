@@ -26,3 +26,7 @@ Route::get('user', 'UserController@getUsers');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/user/role/{id}', 'UserController@getRole');
+
+Route::get('/role/user/{id}', 'RoleController@getUsers');

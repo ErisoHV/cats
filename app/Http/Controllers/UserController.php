@@ -13,17 +13,19 @@ class UserController extends Controller
     //
 	
 	public function getUser($id){
-		$user = User::find($id);
-		echo $user->name;
+		return User::find($id);
 	}	
 	
 	public function getUsers(){
-		$users = User::all();
-		
-		foreach ($users as $user) {
-			echo $user->name. " - " . $user->email ;
-		}
-		
+		return User::all();
 	}
+        
+        public function getRole($id){
+            $user = $this->getUser($id);
+            if ($user != null){
+                return $user->role;
+            }
+            return null;
+        }
 	
 }
