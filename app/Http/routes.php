@@ -17,16 +17,25 @@ Route::get('/', function () {
 });
 
 Route::get('hello/{name}', function($name){
+	// Blade::setEscapedContentTags('[[', ']]'); // Changing Laravel blade delimiter
 	echo "Hello world! and... ".$name;
 });
 
-Route::get('user/{id}', 'UserController@getUser');
-Route::get('user', 'UserController@getUsers');
+//Route::auth();
 
-Route::auth();
+//Route::get('/home', 'HomeController@index');
 
-Route::get('/home', 'HomeController@index');
+Route::group(array('prefix' => 'user'), function(){
+	Route::get('/', 'UserController@getUsers');	
+	Route::get('/{id}', 'UserController@getUser');
+	Route::get('/{id}/role', 'UserController@getRole');
+});
 
-Route::get('/user/role/{id}', 'UserController@getRole');
+Route::group(array('prefix' => 'role'), function(){
+	Route::get('/', 'RoleController@getRoles');	
+	Route::get('/{id}', 'RoleController@getRole');
+	Route::get('/{id}/users', 'RoleController@getUsers');
+});
 
-Route::get('/role/user/{id}', 'RoleController@getUsers');
+
+

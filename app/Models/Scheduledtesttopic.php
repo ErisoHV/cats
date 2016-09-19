@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Scheduledtesttopic extends Model
 {
-    protected $table = 'scheduledtesttopic';
+    protected $table = 'scheduledTestTopic';
 
     public $timestamps = true;
 

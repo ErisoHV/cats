@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Questiontype extends Model
 {
-    protected $table = 'questiontype';
+    protected $table = 'questionType';
 
     public $timestamps = true;
 
