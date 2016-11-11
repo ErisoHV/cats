@@ -27,5 +27,8 @@ class Question extends Model
 
     protected $guarded = [];
 
-        
+    public function type(){ //1 question -> 1 type
+        return $this->belongsTo('App\Models\Questiontype');
+    }
+
 }

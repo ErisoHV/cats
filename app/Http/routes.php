@@ -26,16 +26,19 @@ Route::get('hello/{name}', function($name){
 //Route::get('/home', 'HomeController@index');
 
 Route::group(array('prefix' => 'user'), function(){
-	Route::get('/', 'UserController@getUsers');	
+	Route::get('/', 'UserController@getUsers');
 	Route::get('/{id}', 'UserController@getUser');
 	Route::get('/{id}/role', 'UserController@getRole');
 });
 
 Route::group(array('prefix' => 'role'), function(){
-	Route::get('/', 'RoleController@getRoles');	
+	Route::get('/', 'RoleController@getRoles');
 	Route::get('/{id}', 'RoleController@getRole');
 	Route::get('/{id}/users', 'RoleController@getUsers');
 });
 
-
-
+Route::group(array('prefix' => 'question'), function (){
+  Route::get('/', 'QuestionController@getQuestions');
+	Route::get('/{id}', 'QuestionController@getQuestion');
+	Route::get('/{id}/type', 'QuestionController@getType');
+});
