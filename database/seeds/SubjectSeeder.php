@@ -11,12 +11,12 @@ class SubjectSeeder extends Seeder
      */
     public function run()
     {
-      /*  $subject = [
-          ["name" => "Algorithm"],
-          ["description" => "Algorithm"],
-          ["sectionsNo" => 2],
-          ["isActive" => ]
+        $subject =
+          ["name" => "Algorithm",
+          "description" => "Algorithm",
+          "sectionsNo" => 2,
+          "isActive" => 1];
 
-        ]*/
+          Subject::create($subject);
     }
 }
