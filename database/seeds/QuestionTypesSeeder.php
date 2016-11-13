@@ -21,7 +21,6 @@ class QuestionTypesSeeder extends Seeder
 				"description" => "Ask your respondent to choose one answer
 				from your list of answer choices.",
 				"maxAnswerNo" => 10]
-		
 		];
 		
 		foreach ($questionTypes as $type){

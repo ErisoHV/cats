@@ -27,5 +27,10 @@ class Subject extends Model
 
     protected $guarded = [];
 
-        
+    public function sections(){ // 1 Subject -> N Sections
+      return $this -> hasMany('App\Models\Section');
+
+    }
+
+
 }

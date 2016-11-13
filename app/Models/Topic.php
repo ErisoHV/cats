@@ -21,5 +21,9 @@ class Topic extends Model
 
     protected $guarded = [];
 
-        
+    public function concepts() { // 1 topic -> N Concepts
+      return $this -> hasMany('App\Models\Concept');
+    }
+
+
 }

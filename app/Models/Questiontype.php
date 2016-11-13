@@ -21,5 +21,9 @@ class Questiontype extends Model
 
     protected $guarded = [];
 
-        
+    public function questions(){
+      return $this -> hasMany('App\Models\Question');
+    }
+
+
 }
