@@ -55,9 +55,20 @@ Route::group (array('prefix' => 'topic'), function(){
 	Route::get('/{id}/concepts', 'TopicController@getConcepts');
 });
 
+Route::group (array('prefix' => 'concept'), function(){
+	Route::get('/', 'ConceptController@getConcepts');
+	Route::get('/{id}','ConceptController@getConcept');
+	Route::get('/{id}/topic', 'ConceptController@getTopic');
+});
+
 Route::group (array('prefix' => 'subject'), function(){
 	Route::get('/', 'SubjectController@getSubjects');
 	Route::get('/{id}','SubjectController@getSubject');
 	Route::get('/{id}/sections', 'SubjectController@getSections');
+});
 
+Route::group (array('prefix' => 'section'), function(){
+	Route::get('/', 'SectionController@getSections');
+	Route::get('/{id}','SectionController@getSection');
+	Route::get('/{id}/subject', 'SectionController@getSubject');
 });

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Subject;
 
 class SubjectSeeder extends Seeder
 {

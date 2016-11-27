@@ -22,7 +22,15 @@ class UserSeeder extends Seeder
 				"username" => "SuperUser",
 				"isActive" => true,
 				"role_id" => Role::where('name','=','Administrator')->first()->id
-			]
+			],
+      [
+        "name" => "TestTeacher",
+				"email" => "TestTeacher@example.com",
+				"password" => Hash::make("testteacher"),
+				"username" => "testteacher",
+				"isActive" => true,
+				"role_id" => Role::where('name','=','Instructor')->first()->id
+      ]
 		];
 		foreach ($users as $user){
 			User::create($user);

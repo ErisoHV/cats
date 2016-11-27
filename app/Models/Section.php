@@ -21,5 +21,8 @@ class Section extends Model
 
     protected $guarded = [];
 
-        
+    public function subject(){ //1 section -> 1 subject
+        return $this->belongsTo('App\Models\Subject');
+    }
+
 }

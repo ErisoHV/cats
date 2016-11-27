@@ -19,11 +19,11 @@ class CreateUserTestsTable extends Migration
 			$table->dateTime('date')->useCurrent = true;
 			$table->boolean('isSuggested');
 			$table->float('knowledgeLevel')->default(0.0);
-			
+
 			//User
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('user');
-			
+
         });
     }
 
