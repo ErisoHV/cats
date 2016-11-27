@@ -15,17 +15,17 @@ class CreateScheduledTestTopicsTable extends Migration
         Schema::create('scheduledTestTopic', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-			
+
 			//Scheduled test
 			$table->integer('scheduledTest_id')->unsigned();
 			$table->foreign('scheduledTest_id')->references('id')->on('scheduledTest');
-			
+
 			//Topic
 			$table->integer('topic_id')->unsigned();
 			$table->foreign('topic_id')->references('id')->on('topic');
-			
+
 			$table->unique(array('scheduledTest_id', 'topic_id'));
-			
+
         });
     }
 
@@ -36,6 +36,6 @@ class CreateScheduledTestTopicsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('scheduledTestTopics');
+        Schema::drop('scheduledTestTopic');
     }
 }

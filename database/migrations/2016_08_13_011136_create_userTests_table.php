@@ -34,6 +34,6 @@ class CreateUserTestsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('userTests');
+        Schema::drop('userTest');
     }
 }

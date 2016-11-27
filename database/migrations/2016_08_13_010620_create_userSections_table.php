@@ -16,15 +16,15 @@ class CreateUserSectionsTable extends Migration
             $table->increments('id');
             $table->timestamps();
 			$table->float('initialLevel')->default(0.0);
-			
+
 			//User
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('user');
-			
+
 			//Section
 			$table->integer('section_id')->unsigned();
 			$table->foreign('section_id')->references('id')->on('section');
-			
+
 			$table->unique(array('user_id','section_id'));
         });
     }
@@ -36,6 +36,6 @@ class CreateUserSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('userSections');
+        Schema::drop('userSection');
     }
 }

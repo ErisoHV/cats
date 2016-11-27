@@ -15,17 +15,17 @@ class CreateResourceTopicsTable extends Migration
         Schema::create('resourceTopic', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-			
+
 			//Resource
 			$table->integer('resource_id')->unsigned();
 			$table->foreign('resource_id')->references('id')->on('resource');
-			
+
 			//Topic
 			$table->integer('topic_id')->unsigned();
 			$table->foreign('topic_id')->references('id')->on('topic');
-			
+
 			$table->index('topic_id');
-			
+
         });
     }
 
@@ -36,6 +36,6 @@ class CreateResourceTopicsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('resourceTopics');
+        Schema::drop('resourceTopic');
     }
 }

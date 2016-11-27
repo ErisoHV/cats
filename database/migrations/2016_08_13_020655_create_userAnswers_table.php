@@ -15,22 +15,19 @@ class CreateUserAnswersTable extends Migration
         Schema::create('userAnswer', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-			
+
 			//Question
 			$table->integer('question_id')->unsigned();
 			$table->foreign('question_id')->references('id')->on('question');
-			
+
 			//Answer
-			$table->integer('answer_id')->unsigned();
-			$table->foreign('answer_id')->references('id')->on('answer');
-			
+			$table->integer('option_id')->unsigned();
+			$table->foreign('option_id')->references('id')->on('option');
+
 			//User test
 			$table->integer('userTest_id')->unsigned();
 			$table->foreign('userTest_id')->references('id')->on('userTest');
-			
-			$table->unique(array('question_id','answer_id','userTest_id'));
-			
-        });
+      });
     }
 
     /**

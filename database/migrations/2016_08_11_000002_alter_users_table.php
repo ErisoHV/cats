@@ -14,15 +14,15 @@ class AlterUsersTable extends Migration
     {
         Schema::table('user', function (Blueprint $table) {
             //
-			
+
 			$table->string('userName')->unique();
 			$table->string('profileImage')->nullable()->comment('User profile image');
 			$table->boolean('isActive');
-			
-			//Role 
+
+			//Role
 			$table->integer('role_id')->unsigned();
 			$table->foreign('role_id')->references('id')->on('role');
-			
+
         });
     }
 
@@ -33,8 +33,6 @@ class AlterUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('user', function (Blueprint $table) {
-            //Schema::drop('users');
-        });
+        Schema::drop('user');
     }
 }
