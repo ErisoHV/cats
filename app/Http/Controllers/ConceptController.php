@@ -22,7 +22,7 @@ class ConceptController extends Controller
     public function getTopic($id){
       $concept = $this -> getConcept($id);
       if ($concept != null){
-        return $this -> topic;
+        return $concept -> topic;
       }
       return null;
     }

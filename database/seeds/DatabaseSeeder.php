@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
   		$this->call("UserSeeder");
       $this->call("SubjectSeeder");
       $this->call("SectionSeeder");
+      $this->call("TopicSeeder");
+      $this->call("ConceptSeeder");
   		Eloquent::reguard();
     }
 }

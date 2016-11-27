@@ -21,7 +21,7 @@ class SubjectController extends Controller{
   public function getSections($id){
     $subject = $this -> getSubject($id);
     if ($subject != null){
-      return $this -> sections;
+      return $subject -> sections;
     }
     return null;
   }
