@@ -6,7 +6,6 @@ use App\Models\Question;
 
 class QuestionController extends Controller
 {
-
     public function getQuestion($id){
       return Question::find($id);
     }

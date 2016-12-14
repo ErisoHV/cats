@@ -5,8 +5,6 @@ use App\Models\Questiontype;
 
 class QuestionTypeController extends Controller
 {
-    //
-
 	public function getQuestionType($id){
 		return QuestionType::find($id);
 	}

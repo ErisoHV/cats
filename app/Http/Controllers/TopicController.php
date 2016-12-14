@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Topic;
 
-class TopicController extends Controller {
-
+class TopicController extends Controller
+{
   public function getTopics(){
     return Topic::all();
   }

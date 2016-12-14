@@ -71,4 +71,5 @@ Route::group (array('prefix' => 'section'), function(){
 	Route::get('/', 'SectionController@getSections');
 	Route::get('/{id}','SectionController@getSection');
 	Route::get('/{id}/subject', 'SectionController@getSubject');
+	Route::get('/{id}/users', 'UsersectionController@getUsers');
 });

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 /**
  * Class Section
@@ -23,6 +24,10 @@ class Section extends Model
 
     public function subject(){ //1 section -> 1 subject
         return $this->belongsTo('App\Models\Subject');
+    }
+
+    public function users(){
+        return $this->belongsToMany('App\Models\User','usersection');
     }
 
 }

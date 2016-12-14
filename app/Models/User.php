@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Section;
 
 /**
  * Class User
@@ -29,5 +30,9 @@ class User extends Model
     public function role(){ // 1 user -> 1 role
         return $this->belongsTo('App\Models\Role');
     }
-        
+
+    public function sections(){
+      return $this->belongsToMany('App\Models\Section','usersection');
+    }
+
 }

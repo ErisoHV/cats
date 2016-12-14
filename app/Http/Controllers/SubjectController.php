@@ -8,8 +8,8 @@ use App\Http\Requests;
 
 use App\Models\Subject;
 
-class SubjectController extends Controller{
-
+class SubjectController extends Controller
+{
   public function getSubjects(){
     return Subject::all();
   }

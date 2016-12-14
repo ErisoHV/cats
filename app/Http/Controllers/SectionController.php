@@ -10,7 +10,6 @@ use App\Models\Section;
 
 class SectionController extends Controller
 {
-    //
     public function getSections(){
       return Section::all();
     }
@@ -26,8 +25,4 @@ class SectionController extends Controller
       }
       return null;
     }
-
-
-
-
 }
