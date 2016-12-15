@@ -15,9 +15,9 @@ class UserController extends Controller
 
   public function getRole($id){
       $user = $this->getUser($id);
-      if ($user != null){
+      if (!empty($user)){
           return $user->role;
       }
-      return null;
+      return [];
   }
 }

@@ -15,10 +15,10 @@ class QuestionTypeController extends Controller
 
 	public function getQuestions($id){
 		$questionType = $this -> getQuestionType($id);
-		if ($questionType != null){
+		if (!empty($questionType)){
 			return $questionType -> questions;
 		}
-		return null;
+		return [];
 	}
 
 }

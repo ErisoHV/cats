@@ -16,9 +16,9 @@ class QuestionController extends Controller
 
     public function getType($id){
       $question = $this->getQuestion($id);
-      if ($question != null){
+      if (!empty($question)){
         return $question -> type;
       }
-      return null;
+      return [];
     }
 }

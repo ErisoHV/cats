@@ -23,6 +23,6 @@ class SubjectController extends Controller
     if ($subject != null){
       return $subject -> sections;
     }
-    return null;
+    return [];
   }
 }

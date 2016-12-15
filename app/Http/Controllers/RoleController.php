@@ -16,9 +16,9 @@ class RoleController extends Controller
 
     public function getUsers($id){
         $role = $this->getRole($id);
-        if ($role != null){
+        if (!empty($role)){
             return $role->users;
         }
-        return null;
+        return [];
     }
 }

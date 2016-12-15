@@ -18,9 +18,9 @@ class ConceptController extends Controller
 
     public function getTopic($id){
       $concept = $this -> getConcept($id);
-      if ($concept != null){
+      if (!empty($concept)){
         return $concept -> topic;
       }
-      return null;
+      return [];
     }
 }

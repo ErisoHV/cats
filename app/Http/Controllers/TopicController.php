@@ -15,10 +15,10 @@ class TopicController extends Controller
 
   public function getConcepts($id){
     $topic = $this -> getTopic($id);
-    if ($topic != null){
+    if (!empty($topic)){
       return $topic -> concepts;
     }
-    return null;
+    return [];
   }
 
 }

@@ -26,9 +26,11 @@ Route::get('hello/{name}', function($name){
 //Route::get('/home', 'HomeController@index');
 Route::group(array('prefix' => 'user'), function(){
 	Route::get('/', 'UserController@getUsers');
-
 	Route::get('/{id}', 'UserController@getUser');
 	Route::get('/{id}/role', 'UserController@getRole');
+	Route::get('/{id}/sections', 'UsersectionController@getSectionsByUser');
+	Route::get('/{user_id}/sections/{section_id}',
+		'UsersectionController@getInitialLevelByUserSection');
 });
 
 Route::group(array('prefix' => 'role'), function(){

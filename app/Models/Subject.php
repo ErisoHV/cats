@@ -29,7 +29,6 @@ class Subject extends Model
 
     public function sections(){ // 1 Subject -> N Sections
       return $this -> hasMany('App\Models\Section');
-
     }
 
 

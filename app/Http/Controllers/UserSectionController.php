@@ -15,4 +15,13 @@ class UserSectionController extends Controller
     public function getUsers($id_section){
         return Usersection::users($id_section);
     }
+
+    public function getSectionsByUser($id_user){
+        return Usersection::sectionsByUser($id_user);
+    }
+
+    public function getInitialLevelByUserSection($id_user, $id_section){
+        return Usersection::userInitialLevelInSection($id_user,$id_section);
+    }
+
 }
