@@ -61,6 +61,7 @@ class ConceptController extends Controller
     public function edit($id)
     {
         //
+        return 'Editing ' . $id;
     }
 
     /**
