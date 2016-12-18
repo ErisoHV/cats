@@ -32,7 +32,7 @@ class User extends Model
     }
 
     public function sections(){
-      return $this->belongsToMany('App\Models\Section','usersection');
+      return $this->belongsToMany('App\Models\Section','userSection');
     }
 
 }

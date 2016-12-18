@@ -27,7 +27,7 @@ class Section extends Model
     }
 
     public function users(){
-        return $this->belongsToMany('App\Models\User','usersection');
+        return $this->belongsToMany('App\Models\User','userSection');
     }
 
 }
