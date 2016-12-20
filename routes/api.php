@@ -17,7 +17,14 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
+/*
+* User routes
+*/
 Route::group(array('prefix' => 'user'), function(){
+  Route::group(array('prefix' => 'find'), function(){
+    Route::get('/name/{name}', 'UserController@getUserByUserName');
+    Route::get('/active/{isActive}', 'UserController@getUserByIsActive');
+  });
 	Route::get('/{id}/role', 'UserController@getRole');
 	Route::get('/{id}/sections', 'UserSectionController@getSectionsByUser');
 	Route::get('/{user_id}/sections/{section_id}/level', 'UserSectionController@getInitialLevelByUserSection');
@@ -41,7 +48,7 @@ Route::group(array('prefix' => 'question'), function (){
 });
 	Route::resource('/question', 'QuestionController');
 
-/* 
+/*
 * Question Type routes
 */
 Route::group(array('prefix' => 'questiontype'), function(){
@@ -74,8 +81,8 @@ Route::group (array('prefix' => 'subject'), function(){
 });
 	Route::resource('/subject', 'SubjectController');
 
-/* 
-* 	Section routes 
+/*
+* 	Section routes
 */
 Route::group (array('prefix' => 'section'), function(){
 	Route::get('/{id}/subject', 'SectionController@getSubject');

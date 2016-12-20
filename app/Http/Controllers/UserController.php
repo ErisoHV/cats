@@ -85,7 +85,7 @@ class UserController extends Controller
     {
         //
     }
-    
+
     public function getRole($id){
       $user = $this->show($id);
       if (!empty($user)){
@@ -93,4 +93,19 @@ class UserController extends Controller
       }
       return [];
   	}
+
+    public function getUserByUserName($name){
+        return User::where('userName', $name)->get();
+    }
+
+    public function getUserByUserEmail($email){
+        return User::where('email', $email)->get();
+    }
+
+    public function getUserByIsActive($isActive){
+        if ($isActive == 1 || $isActive == 0)
+            return User::where('isActive', $isActive)->get();
+
+        return response()->json(['error' => 'Argument value not valid']);
+    }
 }

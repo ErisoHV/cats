@@ -6,16 +6,12 @@ mainApp.factory('User', ['$http', function($http) {
     return {
     	get : function(){
     		return $http.get(urlBase);
-    	
+
     	},
-    	
+
     	getUser : function(id){
     		return $http.get(urlBase + '/' + id);
     	}
-    	
-    	
-    	
-    	
     }
 
 }]);
