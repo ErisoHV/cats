@@ -23,7 +23,8 @@ Route::get('/user', function (Request $request) {
 Route::group(array('prefix' => 'user'), function(){
   Route::group(array('prefix' => 'find'), function(){
     Route::get('/name/{name}', 'UserController@getUserByUserName');
-    Route::get('/active/{isActive}', 'UserController@getUserByIsActive');
+    Route::get('/active', 'UserController@getActiveUsers');
+    Route::get('/nonactive', 'UserController@getNonActiveUsers');
   });
 	Route::get('/{id}/role', 'UserController@getRole');
 	Route::get('/{id}/sections', 'UserSectionController@getSectionsByUser');

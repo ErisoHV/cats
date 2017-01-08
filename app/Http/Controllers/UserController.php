@@ -107,5 +107,15 @@ class UserController extends Controller
             return User::where('isActive', $isActive)->get();
 
         return response()->json(['error' => 'Argument value not valid']);
-    }
+   }
+   
+   public function getActiveUsers(){
+   		return User::where('isActive', 1)->get(); 
+   }
+   
+   public function getNonActiveUsers(){
+   		return User::where('isActive', 0)->get();  
+   }
+   
+   
 }
