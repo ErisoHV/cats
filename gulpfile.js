@@ -1,19 +1,39 @@
+'use strict';
+
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
+require('laravel-elixir-bower');
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for your application as well as publishing vendor resources.
- |
- */
+elixir.config.sourcemaps = false;
 
+ 
 elixir((mix) => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+
+    /***********************/
+    /* Process Stylesheets */
+    /***********************/	
+	// For minification use gulp --production
+	// Gentelella
+	mix
+	.sass(['./vendor/bower_components/gentelella/src/scss/custom.scss'], 'public/css/cats.min.css');
+	
+	 // Vendors css
+	mix.styles(['./vendor/bower_components/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css',
+		'./vendor/bower_components/gentelella/vendors/font-awesome/css/font-awesome.min.css'
+	], 'public/css/vendors.min.css');
+    
+    /*******************/
+    /* Process Scripts */
+    /*******************/	
+	
+	/************************/
+    /* Copy HTML Components */
+    /************************/	
+	mix.copy('angular/components/*.html', 'public/components');
+	
+	/************************/
+    /*    Copy Images       */
+    /************************/	
+	mix.copy('angular/images/**', 'public/images');
+	
 });

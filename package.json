@@ -9,29 +9,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "angular": "^1.6.1",
-    "buble": "^0.15.2",
-    "gulp": "^3.9.1",
-    "laravel-elixir": "^6.0.0-15",
-    "jquery": "^3.1.1",
-    "laravel-elixir-webpack-official": "^1.0.10",
-    "laravel-elixir-vue-2": "^0.2.0",
-    "lodash": "^4.17.4",
-    "node-sass": "^4.1.1",
-    "sass": "^0.5.0",
-    "vue": "^2.1.8",
-    "sass-loader": "^4.1.1",
-    "vue-resource": "^1.0.3",
-    "webpack": "^1.14.0"
-  },
   "devDependencies": {
-    "buble": "^0.15.2",
-    "buble-loader": "^0.4.0",
-    "css-loader": "^0.26.1",
-    "vue-loader": "^10.0.2",
-    "vue-template-compiler": "^2.1.8"
+    "bootstrap-sass": "^3.3.7",
+	"jquery": "^3.1.0",
+    "bower": "^1.8.0",
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^6.0.0-9",
+    "laravel-elixir-eslint": "^3.0.0",
+    "laravel-elixir-webpack-official": "^1.0.2"
   },
   "repository": {
     "type": "git",
@@ -40,7 +25,7 @@
   "keywords": [
     "test",
     "system",
-    "adative",
+    "adaptive",
     "TRI"
   ],
   "author": "ErisoHV",
