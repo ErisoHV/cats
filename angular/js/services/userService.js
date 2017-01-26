@@ -1,7 +1,7 @@
 'use strict';
 
 cats.factory('User', ['$http', function($http) {
-	var urlBase = '/api/user';
+	var urlBase = 'api/user';
 
     return {
     	get : function(){

@@ -25,6 +25,18 @@ elixir((mix) => {
     /*******************/
     /* Process Scripts */
     /*******************/	
+	mix.scripts(['./angular/js/app.js', 
+					'./angular/js/routes.js', 
+					'./angular/js/ui.views.js',
+					'./angular/js/services/**/*.js',
+					'./angular/js/controllers/**/*.js'], 
+					'public/js/cats.app.js')
+		.scripts(['./angular/js/vendors/datepicker/daterangepicker.js',
+					'./angular/js/vendors/moment/moment.min.js'],
+					'public/js/vendors/vendors.js')
+		.scripts(['./vendor/bower_components/angular/angular.min.js',
+					'./vendor/bower_components/angular-ui-router/release/angular-ui-router.min.js'],
+					'public/js/vendors/angular.all.min.js');
 	
 	/************************/
     /* Copy HTML Components */
