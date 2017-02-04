@@ -10,16 +10,16 @@ cats
                 url:'/',
                 views: {
                     'header@': {
-                        templateUrl : 'components/headerMenu.html'
+                        templateUrl : 'views/components/headerMenu.html'
                     },
                     'sidebar-menu': {
-                        templateUrl : 'components/sidebarMenu.html'
+                        templateUrl : 'views/components/sidebarMenu.html'
                     },
                     'header-info': {
-                       templateUrl : 'components/leftHeader.html'
+                       templateUrl : 'views/components/leftHeader.html'
                     },
                     'footer': {
-                       templateUrl : 'components/footer.html'
+                       templateUrl : 'views/components/footer.html'
                     }
                 }
             });

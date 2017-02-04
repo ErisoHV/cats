@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,14 +10,10 @@
     <title>CATS </title>
 
     <!-- Bootstrap -->
-    <link href="../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../../vendor/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <!--<link href="../../vendor/bower_components/nprogress/nprogress.css" rel="stylesheet">-->
-    
+    <link href="css/vendors.login.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="../css/cats.scss" rel="stylesheet">
+    <link href="css/cats.scss" rel="stylesheet">
+
   </head>
 
   <body class="login">

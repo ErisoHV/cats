@@ -2,28 +2,14 @@
 <html lang="en" ng-app="catsApp">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>CATS </title>
-
-    <!-- Bootstrap -->
-    <link href="../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../../vendor/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress 
-    <link href="../../vendor/bower_components/nprogress/nprogress.css" rel="stylesheet">-->
-    <!-- iCheck -->
-    <link href="../../vendor/bower_components/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- bootstrap-progressbar -->
-    <link href="../../vendor/bower_components/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-    <!-- JQVMap 
-    <link href="../../vendor/bower_components/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>-->
-
+    <link href="css/vendors.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="../css/cats.scss" rel="stylesheet">
+    <link href="css/cats.scss" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -33,8 +19,8 @@
           <div class="left_col scroll-view">
               <div ui-view="header-info"></div>
             <!-- sidebar menu -->
-            <div id="sidebar-menu" ui-view="sidebar-menu" 
-                 class="main_menu_side hidden-print main_menu"> 
+            <div id="sidebar-menu" ui-view="sidebar-menu"
+                 class="main_menu_side hidden-print main_menu">
             </div>
             <!-- /sidebar menu -->
           </div>
@@ -67,7 +53,7 @@
               <div class="count">123.50</div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
             </div>
-            
+
           </div>
           <!-- /top tiles -->
 
@@ -80,7 +66,7 @@
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                          role="button" aria-expanded="false">
                           <i class="fa fa-wrench"></i></a>
                       <ul class="dropdown-menu" role="menu">
@@ -133,7 +119,7 @@
                 </div>
               </div>
             </div>
-            
+
              <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="x_panel tile fixed_height_320 overflow_hidden">
                 <div class="x_title">
@@ -142,7 +128,7 @@
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                          role="button" aria-expanded="false">
                           <i class="fa fa-wrench"></i></a>
                       <ul class="dropdown-menu" role="menu">
@@ -195,7 +181,7 @@
                 </div>
               </div>
             </div>
-              
+
           </div>
 
 
@@ -208,8 +194,8 @@
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" 
-                         data-toggle="dropdown" role="button" 
+                      <a href="#" class="dropdown-toggle"
+                         data-toggle="dropdown" role="button"
                          aria-expanded="false"><i class="fa fa-wrench"></i></a>
                       <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Settings 1</a>
@@ -319,54 +305,18 @@
         <!-- /footer content -->
       </div>
     </div>
-    <!-- Angular -->
-    <script src="../../vendor/bower_components/angular/angular.min.js"></script>
-    <script src="../../vendor/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <!-- jQuery -->
-    <script src="../../vendor/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="../../vendor/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick 
-    <script src="../vendor/bower_components/fastclick/lib/fastclick.js"></script>-->
-    <!-- NProgress
-    <script src="../vendor/bower_components/nprogress/nprogress.js"></script> -->
-    <!-- Chart.js -->
-    <script src="../../vendor/bower_components/Chart.js/dist/Chart.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="../../vendor/bower_components/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="../../vendor/bower_components/iCheck/icheck.min.js"></script>
-    <!-- Skycons 
-    <script src="../../vendor/bower_components/skycons/skycons.js"></script>-->
-    <!-- Flot -->
-    <script src="../../vendor/bower_components/Flot/jquery.flot.js"></script>
-    <script src="../../vendor/bower_components/Flot/jquery.flot.pie.js"></script>
-    <script src="../../vendor/bower_components/Flot/jquery.flot.time.js"></script>
-    <script src="../../vendor/bower_components/Flot/jquery.flot.stack.js"></script>
-    <script src="../../vendor/bower_components/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="../../vendor/bower_components/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="../../vendor/bower_components/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="../../vendor/bower_components/flot.curvedlines/curvedLines.js"></script>
-    <!-- DateJS 
-    <script src="../../vendor/bower_components/DateJS/build/date.js"></script>-->
-    <!-- JQVMap 
-    <script src="../../vendor/bower_components/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="../../vendor/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="../../vendor/bower_components/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>-->
-    <!-- bootstrap-daterangepicker -->
-    <script src="../js/vendors/moment/moment.min.js"></script>
-    <script src="../js/vendors/datepicker/daterangepicker.js"></script>
-    
-        <!-- gauge.js 
-    <script src="../../vendor/bower_components/gauge.js/dist/gauge.min.js"></script>-->
 
-    <!-- Custom Theme Scripts -->
-    <script src="../js/custom.js"></script>
-    <script src="../js/app.js"></script>
-	<script src="../js/ui.views.js"></script>
-    
-   
+    <script src="js/vendors/vendors.all.min.js"></script>
+    <script src="js/vendors/angular.all.min.js"></script>
+
+    <!-- Cats-->
+    <!--<script src="js/cats.app.js"></script>-->
+    <script src="js/custom.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ui.views.js"></script>
+    <script src="js/services/userService.js"></script>
+    <script src="js/controllers/userController.js"></script>
+
     <!-- Flot -->
     <script>
       $(document).ready(function() {
@@ -449,7 +399,7 @@
           legend: false,
           responsive: false
         };
-        
+
                 new Chart(document.getElementById("canvas2"), {
           type: 'doughnut',
           tooltipFillColor: "rgba(51, 51, 51, 0.55)",
@@ -516,7 +466,7 @@
       });
     </script>
     <!-- /Doughnut Chart -->
-    
+
     <!-- bootstrap-daterangepicker -->
     <script>
       $(document).ready(function() {
