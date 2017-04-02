@@ -1,7 +1,11 @@
 'use strict';
 
+/**
+ * User factory to the cats Laravel User model
+ * @type type
+ */
 cats.factory('User', ['$http', function($http) {
-	var urlBase = '/api/user';
+	var urlBase = userRoute;
 
     return {
     	get : function(){

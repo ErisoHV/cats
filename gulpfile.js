@@ -45,6 +45,8 @@ elixir((mix) => {
 	.scripts([
             //JQuery
             './vendor/bower_components/jquery/dist/jquery.min.js',
+            //Satellizer
+            './vendor/bower_components/satellizer/dist/satellizer.min.js',
             //Bootstrap
             './vendor/bower_components/bootstrap/dist/js/bootstrap.min.js',
             //Other...

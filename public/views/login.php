@@ -1,23 +1,4 @@
-<DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>CATS </title>
-
-    <!-- Bootstrap -->
-    <link href="css/vendors.login.min.css" rel="stylesheet">
-    <!-- Custom Theme Style -->
-    <link href="css/cats.scss" rel="stylesheet">
-
-  </head>
-
-  <body class="login">
-    <div>
+<div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
 
@@ -29,13 +10,13 @@
                 <h1><br></h1>
               <h2>Login Form</h2>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                  <input type="text" class="form-control" placeholder="Username" required="" ng-model="auth.username" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                  <input type="password" class="form-control" placeholder="Password" required="" ng-model="auth.password"/>
               </div>
               <div>
-                <button class="btn btn-dark submit">
+                  <button class="btn btn-dark submit" ng-click="login()">
                     <i class="fa fa-sign-in"></i> Log in</button>
               </div>
               <div class="reset_pass">
@@ -55,6 +36,4 @@
           </section>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+</div>

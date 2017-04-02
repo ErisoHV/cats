@@ -270,33 +270,42 @@ function countChecked() {
     }
 }
 
-var cats = angular.module("catsApp", ['ui.router']);
-
+var cats = angular.module("catsApp", ['ui.router', 'satellizer']);
 
 'use strict';
 
-/*angular.module('catsApp', ['ui.router'])*/
-cats
-.config(['$stateProvider', '$urlRouterProvider', 
-    function($stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('/');
+cats.config(['$stateProvider', '$urlRouterProvider', '$authProvider', 
+    function($stateProvider, $urlRouterProvider, $authProvider) {
+        // Satellizer configuration that specifies which API
+        // route the JWT should be retrieved from
+        $authProvider.loginUrl = '/api/authenticate';
+        
+	$urlRouterProvider.otherwise('/auth');
         $stateProvider
-            .state('dashboard', {
-                url:'/',
-                views: {
-                    'header@': {
-                        templateUrl : 'views/components/headerMenu.html'
-                    },
-                    'sidebar-menu': {
-                        templateUrl : 'views/components/sidebarMenu.html'
-                    },
-                    'header-info': {
-                       templateUrl : 'views/components/leftHeader.html'
-                    },
-                    'footer': {
-                       templateUrl : 'views/components/footer.html'
+                .state('auth',{
+                    url:'/auth',
+                    templateUrl:'views/login.php',
+                    controller: 'AuthController as auth'
+                })
+                .state('dashboard', {
+                    url:'/dashboard',
+                    views: {
+                        '': {
+                            templateUrl:'views/dashboard.php'
+                        },
+                        'header@dashboard': {
+                            templateUrl : 'views/components/headerMenu.html'
+                        },
+                        'sidebar-menu@dashboard': {
+                            templateUrl : 'views/components/sidebarMenu.html'
+                        },
+                        'header-info@dashboard': {
+                           templateUrl : 'views/components/leftHeader.html'
+                        },
+                        'footer@dashboard': {
+                           templateUrl : 'views/components/footer.html'
+                        }
                     }
-                }
             });
     }]);
 'use strict';
@@ -317,6 +326,22 @@ cats.factory('User', ['$http', function($http) {
 
 }]);
 
+cats.controller('AuthController', ['$auth', '$state', function($auth, $state) {
+        var vm = this;
+            
+        vm.login = function() {
+
+            var credentials = {
+                userName: vm.username,
+                password: vm.password
+            };
+            
+            // Use Satellizer's $auth service to login
+            $auth.login(credentials).then(function(data) {
+                $state.go('dashboard');
+            });
+        };
+}]);
 'use strict';
 
 cats.controller('userController', ['$scope', '$http','User', function($scope, $http, User) {

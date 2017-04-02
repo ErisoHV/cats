@@ -1,7 +1,4 @@
 <?php
-
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,9 +10,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+Route::post('authenticate', 'AuthenticateController@authenticate');
+Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
 
 /*
 * User routes
@@ -30,7 +27,8 @@ Route::group(array('prefix' => 'user'), function(){
 	Route::get('/{id}/sections', 'UserSectionController@getSectionsByUser');
 	Route::get('/{user_id}/sections/{section_id}/level', 'UserSectionController@getInitialLevelByUserSection');
 });
-	Route::resource('/user', 'UserController');
+
+Route::resource('/user', 'UserController');
 
 /*
 * 	Role routes

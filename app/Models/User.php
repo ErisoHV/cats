@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Section;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Auth\Authenticatable;
 
 /**
  * Class User
  */
-class User extends Model
+class User extends Model implements AuthenticatableContract
 {
+    use Authenticatable;
+    
     protected $table = 'user';
 
     public $timestamps = true;
@@ -23,6 +26,15 @@ class User extends Model
         'profileImage',
         'isActive',
         'role_id'
+    ];
+    
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 
     protected $guarded = [];

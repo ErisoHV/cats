@@ -1,26 +1,37 @@
 'use strict';
 
-/*angular.module('catsApp', ['ui.router'])*/
-cats
-.config(['$stateProvider', '$urlRouterProvider', 
-    function($stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('/');
+cats.config(['$stateProvider', '$urlRouterProvider', '$authProvider', 
+    function($stateProvider, $urlRouterProvider, $authProvider) {
+        // Satellizer configuration that specifies which API
+        // route the JWT should be retrieved from
+        $authProvider.loginUrl = authRoute;
+        
+	$urlRouterProvider.otherwise('/auth');
         $stateProvider
-            .state('dashboard', {
-                url:'/',
-                views: {
-                    'header@': {
-                        templateUrl : 'views/components/headerMenu.html'
-                    },
-                    'sidebar-menu': {
-                        templateUrl : 'views/components/sidebarMenu.html'
-                    },
-                    'header-info': {
-                       templateUrl : 'views/components/leftHeader.html'
-                    },
-                    'footer': {
-                       templateUrl : 'views/components/footer.html'
+                .state('auth',{
+                    url:'/auth',
+                    templateUrl:loginRoute,
+                    controller: 'AuthController as auth'
+                })
+                .state('dashboard', {
+                    url:dashboardRoute,
+                    controller: 'dashboardController as dashboard',
+                    views: {
+                        '': {
+                            templateUrl:'views/dashboard.php'
+                        },
+                        'header@dashboard': {
+                            templateUrl : 'views/components/dashboard/headerMenu.html'
+                        },
+                        'sidebar-menu@dashboard': {
+                            templateUrl : 'views/components/dashboard/sidebarMenu.html'
+                        },
+                        'header-info@dashboard': {
+                           templateUrl : 'views/components/dashboard/leftHeader.html'
+                        },
+                        'footer@dashboard': {
+                           templateUrl : 'views/components/dashboard/footer.html'
+                        }
                     }
-                }
             });
     }]);

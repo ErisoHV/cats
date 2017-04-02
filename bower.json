@@ -25,7 +25,6 @@
     "jquery": "^3.1.0",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.6.3",
-
     "bootstrap-progressbar": "^0.9.0",
     "Chart.js": "^2.0.2",
     "Flot": "flot#>=0.8.0",
@@ -33,10 +32,11 @@
     "flot.curvedlines": "^1.1.1",
     "flot.orderbars": "*",
     "gauge.js": "^1.2.1",
-    "iCheck": "icheck#^1.0.2"
+    "iCheck": "icheck#^1.0.2",
+    "satellizer": "^0.15.5"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-	"gentelella": "^1.3.0"
+    "gentelella": "^1.3.0"
   }
 }
